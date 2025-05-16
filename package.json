@@ -1,0 +1,123 @@
+{
+  "name": "doc-enhancer",
+  "displayName": "doc-enhancer",
+  "description": "Using WorqHat AI APIs to enhance documentation",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:doc-enhancer.enhance",
+    "onCommand:doc-enhancer.simplify",
+    "onCommand:doc-enhancer.summarize",
+    "onCommand:doc-enhancer.generateFlowchart",
+    "onCommand:doc-enhancer.translate",
+    "onCommand:doc-enhhancer.extractCode"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "doc-enhancer.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "doc-enhancer.enhance",
+        "title": "Enhance Documentation Text",
+        "icon": {
+          "light": "media/enhance.png",
+          "dark": "media/enhance.png"
+        }
+      },
+      {
+        "command": "doc-enhancer.simplify",
+        "title": "Simplify Documentation Text",
+        "icon": {
+          "light": "media/simplify.png",
+          "dark": "media/simplify.png"
+        }
+      },
+      {
+        "command": "doc-enhancer.summarize",
+        "title": "Summarize Documentation",
+        "icon": {
+          "light": "media/summarization-tools.png",
+          "dark": "media/summarization-tools.png"
+        }
+      },
+      {
+        "command": "doc-enhancer.generateFlowchart",
+        "title": "Generate Flowchart",
+        "icon": {
+          "light": "./media/flow-chart.png",
+          "dark": "./media/flow-chart.png"
+        }
+      },
+      {
+        "command": "doc-enhancer.translate",
+        "title": "Translate Documentation Text",
+        "icon": {
+          "light": "media/translate.png",
+          "dark": "media/translate.png"
+        }
+      },{
+        "command": "doc-enhancer.extractCode",
+        "title": "Extract Code Snippets"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "doc-enhancer.enhance",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        },
+        {
+          "command": "doc-enhancer.simplify",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        },
+        {
+          "command": "doc-enhancer.summarize",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        },
+        {
+          "command": "doc-enhancer.generateFlowchart",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        },
+        {
+          "command": "doc-enhancer.translate",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        },
+        {
+          "command": "doc-enhancer.extractCode",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.99.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.23.0"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7"
+  }
+}
